@@ -1,9 +1,6 @@
 package Streams;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -69,6 +66,12 @@ public class StreamIntM1 {
         Map<String, Double> avgSalaryDep = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,
                 Collectors.averagingDouble(Employee::getSalary)));
         System.out.println("avgSalaryDep : "+avgSalaryDep);
+
+        HashMap<String, Integer> count = new HashMap<>();
+
+        String word = "apple is a apple";
+        count.put(word, count.getOrDefault(word, 0) + 1);
+        System.out.println(count);
 
     }
 }
